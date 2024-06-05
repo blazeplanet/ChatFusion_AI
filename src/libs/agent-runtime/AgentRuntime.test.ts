@@ -26,6 +26,7 @@ import {
   LobeZhipuAI,
   ModelProvider,
 } from '@/libs/agent-runtime';
+import LobeWenxinAI from '@/libs/agent-runtime/wenxin';
 
 import { AgentChatOptions } from './AgentRuntime';
 import { LobeBedrockAIParams } from './bedrock';
@@ -224,6 +225,22 @@ describe('AgentRuntime', () => {
 
         // 假设 LobeOpenRouterAI 是 OpenRouter 提供者的实现类
         expect(runtime['_runtime']).toBeInstanceOf(LobeOpenRouterAI);
+      });
+    });
+
+    describe('Wenxin AI provider', () => {
+      it('should initialize correctly', async () => {
+        const jwtPayload: JWTPayload = {
+          wenxinAccessKey: 'user-accessKey',
+          wenxinSecretKey: 'user-secretKey',
+        };
+
+        const runtime = await AgentRuntime.initializeWithProviderOptions(ModelProvider.Wenxin, {
+          wenxin: { accessKey: jwtPayload.wenxinAccessKey, secretKey: jwtPayload.wenxinSecretKey },
+        });
+
+        // 假设 LobeOpenRouterAI 是 OpenRouter 提供者的实现类
+        expect(runtime['_runtime']).toBeInstanceOf(LobeWenxinAI);
       });
     });
 

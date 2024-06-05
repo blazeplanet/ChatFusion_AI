@@ -78,3 +78,4 @@ export { default as QwenProviderCard } from './qwen';
 export { default as TogetherAIProviderCard } from './togetherai';
 export { default as ZeroOneProviderCard } from './zeroone';
 export { default as ZhiPuProviderCard } from './zhipu';
+export { default as WenxinProviderCard } from './wenxin';
