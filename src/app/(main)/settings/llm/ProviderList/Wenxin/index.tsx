@@ -4,16 +4,17 @@ import { Wenxin } from '@lobehub/icons';
 import { Input } from 'antd';
 import { useTranslation } from 'react-i18next';
 
-import { KeyVaultsConfigKey } from '@/app/(main)/settings/llm/const';
-import { ProviderItem } from '@/app/(main)/settings/llm/type';
 import { WenxinProviderCard } from '@/config/modelProviders';
 import { GlobalLLMProviderKey } from '@/types/user/settings';
+
+import { KeyVaultsConfigKey } from '../../const';
+import { ProviderItem } from '../../type';
 
 const providerKey: GlobalLLMProviderKey = 'wenxin';
 
 export const useWenxinProvider = (): ProviderItem => {
   const { t } = useTranslation('modelProvider');
-  // const {styles} = useStyles();
+
   return {
     ...WenxinProviderCard,
     apiKeyItems: [

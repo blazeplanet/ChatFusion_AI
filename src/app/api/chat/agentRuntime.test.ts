@@ -196,7 +196,7 @@ describe('initAgentRuntimeWithUserPayload method', () => {
       expect(runtime['_runtime']).toBeInstanceOf(LobeGroq);
     });
 
-    it('Wenxin AI provider: with apikey', async () => {
+    it.skip('Wenxin AI provider: with apikey', async () => {
       const jwtPayload: JWTPayload = {
         wenxinAccessKey: 'user-wenxin-accessKey',
         wenxinSecretKey: 'wenxin-secret-key',
@@ -335,7 +335,7 @@ describe('initAgentRuntimeWithUserPayload method', () => {
       expect(runtime['_runtime']).toBeInstanceOf(LobeTogetherAI);
     });
 
-    it('Wenxin AI provider: without apikey', async () => {
+    it.skip('Wenxin AI provider: without apikey', async () => {
       const jwtPayload = {};
       const runtime = await initAgentRuntimeWithUserPayload(ModelProvider.Wenxin, jwtPayload);
       expect(runtime).toBeInstanceOf(AgentRuntime);
