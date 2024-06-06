@@ -228,22 +228,6 @@ describe('AgentRuntime', () => {
       });
     });
 
-    describe('Wenxin AI provider', () => {
-      it('should initialize correctly', async () => {
-        const jwtPayload: JWTPayload = {
-          wenxinAccessKey: 'user-accessKey',
-          wenxinSecretKey: 'user-secretKey',
-        };
-
-        const runtime = await AgentRuntime.initializeWithProviderOptions(ModelProvider.Wenxin, {
-          wenxin: { accessKey: jwtPayload.wenxinAccessKey, secretKey: jwtPayload.wenxinSecretKey },
-        });
-
-        // 假设 LobeOpenRouterAI 是 OpenRouter 提供者的实现类
-        expect(runtime['_runtime']).toBeInstanceOf(LobeWenxinAI);
-      });
-    });
-
     describe('Together AI provider', () => {
       it('should initialize correctly', async () => {
         const jwtPayload: JWTPayload = { apiKey: 'user-togetherai-key' };

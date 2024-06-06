@@ -1,6 +1,7 @@
 import { ChatCompletion } from '@baiducloud/qianfan';
-import type QianFanClient from '@baiducloud/qianfan/src/ChatCompletion/index';
 
+// TODO: 没法直接引用该包的类型，会抛错
+// import type QianFanClient from '@baiducloud/qianfan/src/ChatCompletion/index';
 import { debugStream } from '@/libs/agent-runtime/utils/debugStream';
 import { StreamingResponse } from '@/libs/agent-runtime/utils/response';
 import { WenxinResultToStream, WenxinStream } from '@/libs/agent-runtime/utils/streams/wenxin';
@@ -18,7 +19,7 @@ export interface LobeWenxinAIParams {
 }
 
 export class LobeWenxinAI implements LobeRuntimeAI {
-  private client: QianFanClient;
+  private client: any;
   baseURL?: string;
 
   constructor({ accessKey, baseURL, secretKey }: LobeWenxinAIParams) {
